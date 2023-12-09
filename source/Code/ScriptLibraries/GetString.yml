@@ -1,0 +1,68 @@
+---
+class: 512
+flags: 0x2000
+unid: OFD0D20A5DE52C09ED-ON00748CE688256918
+items:
+  - name: $Flags
+    type: text
+    data: s34Q
+  - name: $LANGUAGE
+    type: text
+    data: en
+    signed: true
+  - name: $PublicAccess
+    type: text
+    data: "1"
+    signed: true
+  - name: $ScriptLib
+    type: text
+    data: |
+      '++LotusScript Development Environment:2:5:(Options):0:66
+      Option Public
+      
+      '++LotusScript Development Environment:2:5:(Forward):0:1
+      Declare Function GetString ( StringType As Integer) As String
+      
+      '++LotusScript Development Environment:2:5:(Declarations):0:2
+      
+      '++LotusScript Development Environment:2:1:GetString:1:8
+      Function GetString ( StringType As Integer) As String
+      	
+      	Select Case StringType
+      						'Templates Profile form		
+      	Case 1    'List template button
+      		GetString = "You need to specify directory where Microsoft Word Templates are located"
+      	Case 2  
+      		GetString = "There are no Microsoft Word Templates in a specified directory. Change directory and try again"		
+      	Case 3   
+      		GetString ="Directory you specified not found. Change the path and try again." 
+      		
+      				'Migration Profile form
+      	Case 10  
+      		GetString ="You need to specify directory where files to be migrated are located" 
+      	Case 11   
+      		GetString = "You need to select file(s) you want to migrate"
+      	Case 12   
+      		GetString = "There are no files in a given directory that match file type you had selected. Change directory or file type."
+      	Case 13   
+      		GetString = "Migration Tool"
+      	Case 14   
+      		GetString = "Migration completed. Do you wish to migrate other documents?"
+      	Case 15
+      		GetString = "There are no Microsoft Word, Excel, PowerPoint or PaintBrush files in the directory you had selected. Change directory and try again."
+      	Case 16
+      		GetString= " is not MS Office file."
+      		
+      	Case 20   'Common use
+      		GetString = "Error"
+      		
+      	End Select
+      	
+      End Function
+    signed: true
+    nonsummary: true
+  - name: $TITLE
+    type: text
+    data: GetString
+    signed: true
+remaining: []

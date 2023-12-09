@@ -1,0 +1,67 @@
+---
+class: 32784
+flags: 0x0000
+unid: OF582FE50FD1C5BA51-ON004F361885256207
+items:
+  - name: $Daos
+    type: text
+    data: "0"
+  - name: $DefaultFrameset
+    type: text
+    data: BorderFrame
+  - name: $DefaultWebFrameset
+    type: text
+    data: MainFrameset
+  - name: $Flags
+    type: text
+    data: RF7
+  - name: $FlagsNoRefresh
+    type: text
+    data: ""
+  - name: $LANGUAGE
+    type: text
+    data: en
+  - name: $LargeSummary
+    type: text
+    data: "0"
+  - name: $Revisions
+    type: time
+    data:
+      - data: "2008-04-16T13:04:27.89-04:00"
+        dst: true
+      - data: "2008-04-16T13:04:27.93-04:00"
+        dst: true
+      - data: "2008-04-16T13:04:27.95-04:00"
+        dst: true
+  - name: $TITLE
+    type: text
+    data: |
+      Microsoft Office Library (8.5)
+      MS Office Library
+      #1StdR7DocLibMS
+  - name: $TemplateFileName
+    type: text
+    data: "c:\\notes4\\data\\doclib4.ntf"
+  - name: $TemplateModTime
+    type: time
+    data: "1995-09-22T16:47:49.89-04:00"
+    dst: true
+  - name: $TemplateServerName
+    type: text
+    data: CN=Catherine Duffy/O=Iris
+  - name: IconBitmap
+    type_num: 6
+    type: opaque
+    opaque: |
+      AiAgAQAA/+H////AP///gAf//wAA//4AAH/8AAB/+AAAf/AAAH/gAAD/wAAA/4AAAAAAAAAAgAAAAQAA
+      AAeAAAAHAAAAB4AAAAfwAAAH/gAAB//AAAf/4AAH/+AAB//gAAf/wAAD/4AAAf+AAAH/wAAD//AAD//8
+      AD///wD////D////5/8AAAAAAA//8AAAAAAAAAAAAAAAAADwAO//AAAAAAAAAAAAAAAPH/8AD//wAAAA
+      AAAAAAAA8f7u//AA//8AAAAAAAAADx8f/+7v/wAP8AAAAAAAAPHx/u7//u7/8PAAAAAAAA8fHxEf7u//
+      7u/wAAAAAADx8fERERH+7v/+8AAAAAAPHx8Rf3ERER/u7wAAAAAA8fHxEREX9xEREf4AAAAADx8fEX9x
+      ERF/cR/gAAAAAPHx8RERF/cRERH+8fHh8f4PHxF/cRERf3Ef7//+//7g8fERERf3ERER/u7u7u7gAA8R
+      f3EREX9xH+7x/uH/4ADxEREX9xEREf7+//7vH+AAD/8RERF/cR/u/vH+4f/gAAAA//ERERH+/v7v/u4f
+      4AAAAAAP/xEf7/7x8f7x/+AAAAAAAAD//vH+/x/+/x/gAAAAAAAAD+8f/vHx/vH/4AAAAAAAAA/v4f7+
+      7/7+H+AAAAAAAAAP7//+///+///gAAAAAAAA7u7u7u7u7u7u7gAAAAAADu8fHx8fHx8fHx7gAAAAAA8e
+      7/Hx/uHx8f7v4AAAAAAA/x7v/+/+Hx7v7gAAAAAAAAD/Hu/+4f7v7gAAAAAAAAAAAP8e7/7v7gAAAAAA
+      AAAAAAAA/x7v7gAAAAAAAAAAAAAAAAD/7gAAAAAAAAAAAAAAAAAAD/AAAAAAAA==
+remaining: []

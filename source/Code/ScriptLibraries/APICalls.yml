@@ -1,0 +1,212 @@
+---
+class: 512
+flags: 0x2000
+unid: OFF5D5CC13DD1CB9C9-ON00747FEA88256918
+items:
+  - name: $Flags
+    type: text
+    data: s34Q
+  - name: $LANGUAGE
+    type: text
+    data: en
+    signed: true
+  - name: $PublicAccess
+    type: text
+    data: "1"
+    signed: true
+  - name: $ScriptLib
+    type: text
+    data: |
+      '++LotusScript Development Environment:2:5:(Options):0:74
+      Option Public
+      Option Declare
+      '++LotusScript Development Environment:2:5:(Forward):0:1
+      Declare Type tagOPENFILENAME
+      Declare Type BrowseInfo
+      Declare Function OpenFileDlg ()
+      Declare Function GetDirDlg() As String
+      
+      '++LotusScript Development Environment:2:5:(Declarations):0:10
+      'APICalls: 
+      
+      
+      
+      Private Const BIF_RETURNONLYFSDIRS = 1
+      Private Const BIF_DONTGOBELOWDOMAIN = 2
+      Private Const MAX_PATH = 260
+      
+      Public Const OFN_ALLOWMULTISELECT = &H200
+      Public Const OFN_CREATEPROMPT = &H2000
+      Public Const OFN_ENABLEHOOK = &H20
+      Public Const OFN_ENABLETEMPLATE = &H40
+      Public Const OFN_ENABLETEMPLATEHANDLE = &H80
+      Public Const OFN_EXPLORER = &H80000                         
+      Public Const OFN_EXTENSIONDIFFERENT = &H400
+      Public Const OFN_FILEMUSTEXIST = &H1000
+      Public Const OFN_HIDEREADONLY = &H4
+      Public Const OFN_LONGNAMES = &H200000                       
+      Public Const OFN_NOCHANGEDIR = &H8
+      Public Const OFN_NODEREFERENCELINKS = &H100000
+      Public Const OFN_NOLONGNAMES = &H40000                      
+      Public Const OFN_NONETWORKBUTTON = &H20000
+      Public Const OFN_NOREADONLYRETURN = &H8000
+      Public Const OFN_NOTESTFILECREATE = &H10000
+      Public Const OFN_NOVALIDATE = &H100
+      Public Const OFN_OVERWRITEPROMPT = &H2
+      Public Const OFN_PATHMUSTEXIST = &H800
+      Public Const OFN_READONLY = &H1
+      Public Const OFN_SHAREAWARE = &H4000
+      Public Const OFN_SHAREFALLTHROUGH = 2
+      Public Const OFN_SHARENOWARN = 1
+      Public Const OFN_SHAREWARN = 0
+      Public Const OFN_SHOWHELP = &H10
+      
+      Dim Filter As String
+      Dim FileName As String
+      Dim FileTitle As String
+      Dim TruncName As String
+      Dim VaultWIPRoot As String
+      Dim VaultWIPUserPath As String
+      
+      Type tagOPENFILENAME
+      	lStructSize As Long
+      	hwndOwner As Long
+      	hInstance As Long
+      	lpstrFilter As String
+      	lpstrCustomFilter As Long
+      	nMaxCustFilter As Long
+      	nFilterIndex As Long
+      	lpstrFile As String
+      	nMaxFile As Long
+      	lpstrFileTitle As String
+      	nMaxFileTitle As Long
+      	lpstrInitialDir As String
+      	lpstrTitle As String
+      	Flags As Long
+      	nFileOffset As Integer
+      	nFileExtension As Integer
+      	lpstrDefExt As String
+      	lCustData As Long
+      	lpfnHook As Long
+      	lpTemplateName As Long     
+      End Type
+      
+      Type BrowseInfo
+      	hwndOwner      As Long
+      	pIDLRoot       As Long
+      	pszDisplayName As Long
+      	'lpszTitle      As Long
+      	lpszTitle      As String
+      	ulFlags        As Long
+      	lpfnCallback   As Long
+      	lParam         As Long
+      	iImage         As Long
+      End Type
+      
+      Declare Function SHBrowseForFolder Lib "shell32" (lpbi As BrowseInfo) As Long
+      
+      Declare Function SHGetPathFromIDList Lib "shell32" (Byval pidList As Long, Byval lpBuffer As String) As Long
+      
+      Declare Function GetOpenFileName Lib "comdlg32.dll" Alias "GetOpenFileNameA" (OPENFILENAME As tagOPENFILENAME)  As Long
+      
+      Dim OPENFILENAME As tagOPENFILENAME
+      
+      
+      '++LotusScript Development Environment:2:1:OpenFileDlg:2:8
+      'FUNCTIONS
+      Function OpenFileDlg ()
+      	Dim Title As String    
+      	Dim DefExt As String
+      	Dim szCurDir As String 
+      	Dim APIResults%
+      	
+           'Unknown function
+           ' SetFileFilter
+      	
+           'Give the dialog a caption title.
+      	Title = "Add supporting document" & Chr$(0)
+      	
+           'Allocate string space for returned strings
+      	FileName = Chr$(0) & Space$(255) & Chr$(0)
+      	FileTitle = Space$(255) & Chr$(0)
+      	
+           'If the user does not specify an extension, append TXT.
+      	DefExt = "BMP" & Chr$(0)
+      	
+           'Set up the default directory
+      	szCurDir = Curdir$ & Chr$(0)
+      	
+           'Set up the data structure before you call the GetOpenFileName
+      	
+      	OPENFILENAME.lStructSize = Len(OPENFILENAME)
+      	
+           'If the OpenFile Dialog box is not linked to any form use this line.
+           'It will pass a null pointer.
+      	
+      	OPENFILENAME.hwndOwner = 0&
+      	
+      	OPENFILENAME.lpstrFilter =  Filter
+      	OPENFILENAME.nFilterIndex = 1
+      	OPENFILENAME.lpstrFile = FileName
+      	OPENFILENAME.nMaxFile = Len(FileName)
+      	OPENFILENAME.lpstrFileTitle = FileTitle
+      	OPENFILENAME.nMaxFileTitle = Len(FileTitle)
+      	OPENFILENAME.lpstrTitle = Title
+      	OPENFILENAME.Flags = OFN_FILEMUSTEXIST
+      	OPENFILENAME.lpstrDefExt = DefExt
+      	OPENFILENAME.hInstance = 0
+      	OPENFILENAME.lpstrCustomFilter = 0
+      	OPENFILENAME.nMaxCustFilter = 0
+      	OPENFILENAME.lpstrInitialDir = szCurDir
+      	OPENFILENAME.nFileOffset = 0
+      	OPENFILENAME.nFileExtension = 0
+      	OPENFILENAME.lCustData = 0
+      	OPENFILENAME.lpfnHook = 0
+      	OPENFILENAME.lpTemplateName = 0
+      	
+           'This will pass the desired data structure to the Windows API,
+           'which will in turn it uses to display the Open Dialog form.   
+      	APIResults% = GetOpenFileName(OPENFILENAME)
+      	
+      	If APIResults% <> 0 Then          
+      		FileName = Cstr( OPENFILENAME.lpstrFile )
+      		FileTitle = Cstr( OPENFILENAME.lpstrFileTitle )        
+      		OpenFileDlg = 1
+      	Else 
+      		OpenFileDlg = 0
+      	End If
+      End Function
+      '++LotusScript Development Environment:2:1:GetDirDlg:1:8
+      Function GetDirDlg() As String
+      	
+      	Dim lpIDList As Long
+      	Dim sBuffer As String
+      	Dim sTitle As String
+      	Dim tBrowseInfo As BrowseInfo
+      	
+      	sTitle = "Select the Folder"
+      	
+      	tBrowseInfo.hwndOwner = 0&
+      	tBrowseInfo.lpszTitle = sTitle
+      	tBrowseInfo.ulFlags = BIF_RETURNONLYFSDIRS + BIF_DONTGOBELOWDOMAIN
+      	
+      	lpIDList = SHBrowseForFolder(tBrowseInfo)
+      	
+      	If (lpIDList) Then
+      		sBuffer = Space(MAX_PATH)
+      		SHGetPathFromIDList lpIDList, sBuffer
+      		sBuffer = Left(sBuffer, Instr(sBuffer, Chr$(0) ) - 1)
+      		If Right$(sBuffer, 1) <> "\" Then sBuffer = sBuffer + "\"
+      		GetDirDlg = sBuffer
+      	Else
+      		GetDirDlg = ""
+      	End If
+      	
+      End Function
+    signed: true
+    nonsummary: true
+  - name: $TITLE
+    type: text
+    data: APICalls
+    signed: true
+remaining: []
