@@ -24,7 +24,7 @@ Note: This template is not intended for Web (browser) use and is not supported o
 This database gives Notes users the ability to seamlessly create and save documents using Microsoft Word, Excel, PowerPoint, or Paintbrush, without leaving Notes.  In addition, the library serves as an electronic filing cabinet for these documents, making it easy for all members of a workgroup to locate, update, and print desired documents.  The database might contain anything from environmental impact statements for a group of engineers using Word to financial statements for a group of loan officers using Excel.
 Besides being a repository and point of interaction for documents created with Microsoft application software, the document library includes other important document management features.  These features include archiving and review cycle capabilities.
 
-## Who will use this database?**
+## Who will use this database?
 Anyone who wishes to create a record of a document or review available documents may use this database.
 
 ## Important Features
