@@ -1,10 +1,11 @@
+---
 layout: default
 title: "Home"
 nav_order: 1
 description: "Template: Microsoft Office Library"
 has_children: true
 ---
-<h1>Welcome</h1>
+<h1>HCL Domino Microsoft Office Library Template</h1>
 This is the HCL Domino Template "Microsoft Office Library" which can be used with the HCL Notes and/or Nomad Clients.
 Note: This template is not intended for Web (browser) use and is not supported on the Macintosh.
 
@@ -16,7 +17,6 @@ Note: This template is not intended for Web (browser) use and is not supported o
 1. TOC
 {:toc}
 </details>
-
 
 ![Screenshot Microsoft Office Document Library](assets/png/screenshot.png)
 
