@@ -1,6 +1,6 @@
 #  Microsoft Office Document Library
 
-![Screenshot Microsoft Office Document Library](docs/assets/png/screenshot.png)
+![Screenshot Microsoft Office Document Library](docs/assets/images/png/screenshot.png)
 
 ## Info
 Property | Value
