@@ -1,5 +1,16 @@
 #  Microsoft Office Document Library
 
+![Screenshot Microsoft Office Document Library](docs/assets/png/screenshot.png)
+
+## Info
+Property | Value
+---|---
+Filename |  doclbm7_EN.ntf
+Templatename | StdR7DocLibMS
+Template version | 8.5.2 (16.11.2020)
+Signed by | Open Source Template/Domino Development
+Optimized for | Notes Client & Web
+
 To build the application from the source see the latest on [Source Code Integration](https://help.hcltechsw.com/dom_designer/14.0.0/basic/wn_sourcecodeutilitytool.html) in Domino. See the [Releases](https://github.com/HCL-TECH-SOFTWARE/domino-msoffice-library-ntf/releases) for the application download.
 
 ## Issues
